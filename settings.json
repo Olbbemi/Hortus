@@ -1,0 +1,37 @@
+{
+  "model": "opus[1m]",
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "ralph-loop@claude-plugins-official": true,
+    "armarium@hortus": true
+  },
+  "extraKnownMarketplaces": {
+    "semgrep-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "semgrep/mcp-marketplace"
+      }
+    },
+    "hortus": {
+      "source": {
+        "source": "github",
+        "repo": "Olbbemi/Armarium"
+      }
+    }
+  },
+  "theme": "dark",
+  "tui": "fullscreen",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/guard-global-config.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
