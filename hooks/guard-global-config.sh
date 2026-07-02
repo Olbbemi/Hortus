@@ -41,6 +41,7 @@ managed_links="
 $HOME/.claude/CLAUDE.md
 $HOME/.claude/settings.json
 $HOME/.claude/hooks/guard-global-config.sh
+$HOME/.claude/statusline.sh
 "
 
 is_managed=0
@@ -78,7 +79,8 @@ cat >&2 <<EOF
   현재 cwd  : ${cwd:-(없음)}
   remote    : ${remote_url:-(git 레포 아님 / remote 없음)}
 
-전역 CLAUDE.md / settings.json / 가드 훅은 remote 가 Olbbemi/Hortus 인 위치에서만 고칩니다.
+Hortus 가 관리하는 전역 설정 파일(CLAUDE.md / settings.json / 가드 훅 / statusline 등)은
+remote 가 Olbbemi/Hortus 인 위치에서만 고칩니다.
 Hortus 레포로 이동해 수정한 뒤 사용하세요. (수정 내용을 메모리에 적어두는 것을 권장)
 EOF
 exit 2

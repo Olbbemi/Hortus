@@ -22,6 +22,7 @@ MAP=(
   "CLAUDE.md:::$CLAUDE_DIR/CLAUDE.md"
   "settings.json:::$CLAUDE_DIR/settings.json"
   "hooks/guard-global-config.sh:::$CLAUDE_DIR/hooks/guard-global-config.sh"
+  "statusline.sh:::$CLAUDE_DIR/statusline.sh"
 )
 
 echo "Hortus install"
@@ -29,8 +30,8 @@ echo "  repo   : $REPO_DIR"
 echo "  target : $CLAUDE_DIR"
 echo
 
-# 훅 스크립트는 실행 가능해야 한다
-chmod +x "$REPO_DIR/hooks/guard-global-config.sh" 2>/dev/null || true
+# 스크립트는 실행 가능해야 한다
+chmod +x "$REPO_DIR/hooks/guard-global-config.sh" "$REPO_DIR/statusline.sh" 2>/dev/null || true
 
 link_one() {
   local src="$1" dst="$2"

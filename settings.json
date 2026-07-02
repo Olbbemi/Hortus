@@ -21,6 +21,10 @@
   },
   "theme": "dark",
   "tui": "fullscreen",
+  "statusLine": {
+    "type": "command",
+    "command": "$HOME/.claude/statusline.sh"
+  },
   "hooks": {
     "PreToolUse": [
       {
