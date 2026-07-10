@@ -1,5 +1,23 @@
 {
   "model": "opus[1m]",
+  "permissions": {
+    "allow": ["Bash"],
+    "ask": [
+      "Bash(git reset --hard:*)", "Bash(git clean:*)",
+      "Bash(git checkout -- :*)", "Bash(git restore:*)",
+      "Bash(git rebase:*)", "Bash(git branch -D:*)",
+      "Bash(git push --force:*)", "Bash(git push -f:*)",
+      "Bash(git rm:*)", "Bash(git filter-branch:*)",
+      "Bash(rm -rf:*)", "Bash(dd:*)", "Bash(shred:*)", "Bash(truncate:*)",
+      "Bash(chmod -R:*)", "Bash(chown -R:*)",
+      "Bash(gh auth:*)", "Bash(npm login:*)",
+      "Bash(ssh-keygen:*)", "Bash(ssh-add:*)", "Bash(gpg:*)",
+      "Bash(ssh:*)", "Bash(scp:*)",
+      "Bash(gh pr create:*)", "Bash(gh pr merge:*)",
+      "Bash(npm publish:*)", "Bash(cargo publish:*)"
+    ],
+    "deny": []
+  },
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,
@@ -33,6 +51,15 @@
           {
             "type": "command",
             "command": "$HOME/.claude/hooks/guard-global-config.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/guard-bash.sh"
           }
         ]
       }

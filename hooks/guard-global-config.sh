@@ -41,6 +41,7 @@ managed_links="
 $HOME/.claude/CLAUDE.md
 $HOME/.claude/settings.json
 $HOME/.claude/hooks/guard-global-config.sh
+$HOME/.claude/hooks/guard-bash.sh
 $HOME/.claude/statusline.sh
 "
 
